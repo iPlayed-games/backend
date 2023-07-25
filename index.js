@@ -1,12 +1,24 @@
-const express = require('express')
+const express = require('express');
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-const app = express()
-const PORT = 3000
+dotenv.config();
+const app = express();
+const PORT = process.env.PORT || 6001;
 
 app.get('/', (req, res) => {
   res.send('iPlayed!')
 })
 
-app.listen(PORT, () => {
-  console.log(`App backend listening on port ${PORT}`)
-})
+
+// MONGOOSE SETUP
+
+mongoose
+    .connect(process.env.MONGO_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(()=> {
+        app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+    })
+    .catch((error) => console.log(`${error} did not connect`));
