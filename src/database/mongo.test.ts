@@ -12,7 +12,5 @@ describe('Testing connections', () => {
     await mongoose.connection.close()
   })
 
-  test('Testing database creating data', async () => {
-    expect(1).toBe(1);
-  })
+  test.todo('Testing database creating data')
 })
