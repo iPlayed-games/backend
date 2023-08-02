@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const PORT: string = process.env.PORT!
+const PORT: string = process.env.SERVER_PORT!
 
 // App server connection
 export async function startServer(): Promise<void> {
