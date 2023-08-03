@@ -1,4 +1,3 @@
-
 type IncludeActivityType = {
   include: {
     activity: boolean
@@ -11,5 +10,3 @@ export const AllIncludeActivity: IncludeActivityType = {
     activity: true,
   },
 }
-
-

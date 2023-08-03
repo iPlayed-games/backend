@@ -1,0 +1,17 @@
+{
+  "env": {
+    "es2021": true
+  },
+  "extends": ["prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "ignorePatterns": ["node_modules", ".github", "prisma", "src/__test__/**/*.ts"],
+  "rules": {
+    "no-console": "off",
+    "no-var": "error",
+    "no-warning-comments": "off"
+  }
+}

@@ -1,10 +1,11 @@
 import mongoose from '../database/mongo'
 
 describe('Testing connections', () => {
-
   /* Connecting to the database before each test. */
-  beforeEach(async () => { 
-    await mongoose.connection.once('connected', () => console.log('Listening on port 3000'))
+  beforeEach(async () => {
+    await mongoose.connection.once('connected', () => {
+      console.log('Listening on port 3000')
+    })
   })
 
   /* Closing database connection after each test. */

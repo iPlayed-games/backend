@@ -1,14 +1,13 @@
-import express, { Express } from 'express';
-import userRouter from './routes/userRoute';
-import bodyParser from 'body-parser';
+import express, { type Express } from 'express'
+import userRouter from './routes/userRoute'
+import bodyParser from 'body-parser'
 
-const app: Express = express();
+const app: Express = express()
 
 // Middleware
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 
 // Routes
-app.use("/users", userRouter)
-
+app.use('/users', userRouter)
 
 export default app
