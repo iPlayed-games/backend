@@ -4,7 +4,7 @@ const config: Config = {
     preset: 'ts-jest',
     roots: ["<rootDir>/src"],
     testEnvironment: 'node',
-    coveragePathIgnorePatterns: ['node_modules', 'src/database'],
+    coveragePathIgnorePatterns: ['node_modules'],
     reporters: ['default'],
     transform: {
        "^.+\\.(ts|tsx)$": "ts-jest"

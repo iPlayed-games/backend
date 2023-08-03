@@ -1,4 +1,4 @@
-import mongoose from './mongo'
+import mongoose from '../database/mongo'
 
 describe('Testing connections', () => {
 

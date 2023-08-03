@@ -1,17 +1,14 @@
-import express, { Express, Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client'
+import express, { Express } from 'express';
+import userRouter from './routes/userRoute';
+import bodyParser from 'body-parser';
 
-const prisma = new PrismaClient()
 const app: Express = express();
 
-app.get('/users', async (_req: Request, res: Response): Promise<void> => {
-  // TODO: to be analyzed.
-  const allUsers = await prisma.user.findMany({
-    include: {
-      activity: true,
-    },
-  })
-  res.send(allUsers);
-});
+// Middleware
+app.use(bodyParser.json());
+
+// Routes
+app.use("/users", userRouter)
+
 
 export default app
