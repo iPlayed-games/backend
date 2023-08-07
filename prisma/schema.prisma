@@ -10,7 +10,7 @@ datasource db {
 model User {
   id       String     @id @default(auto()) @map("_id") @db.ObjectId
   name     String
-  email    String     @unique
+  email    String     
   password String
   wishList String[]
   activity Activity[] @relation("userActivity")
@@ -48,9 +48,9 @@ model Venue {
   logo String
   mainPhoto String
   bannerPhoto String
-  userVenue User @relation("userVenue", fields: [userVenueId], references: [id])
+  userVenue User? @relation("userVenue", fields: [userVenueId], references: [id])
   userVenueId String @db.ObjectId @unique
-  activityVenue Activity @relation("activityVenue", fields: [activityVenueId], references: [id])
+  activityVenue Activity? @relation("activityVenue", fields: [activityVenueId], references: [id])
   activityVenueId String @db.ObjectId @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -65,7 +65,7 @@ model Location {
   postalCode String
   latitude String
   longitude String
-  activityLocation Activity @relation("venueLocation", fields: [activityLocationId], references: [id]) 
+  activityLocation Activity? @relation("venueLocation", fields: [activityLocationId], references: [id]) 
   activityLocationId String @db.ObjectId @unique
 }
 
