@@ -13,7 +13,8 @@ model User {
   email    String     @unique
   password String
   wishList String[]
-  activity Activity[]
+  activity Activity[] @relation("userActivity")
+  venueId Venue? @relation("userVenue")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -22,16 +23,18 @@ model Activity {
   id     String @id @default(auto()) @map("_id") @db.ObjectId
   name   String
   description String
+  image String
+  venueId Venue? @relation("activityVenue")
   duration Int
   category Category @default(Indor)
   numPlayers Int
   minPlayers Int
   maxPlayers Int
   difficultRating DifficultyRating @default(Normal)
-  likeReview Int
-
-  user   User   @relation(fields: [userId], references: [id])
+  likeReview Float
+  user   User?   @relation("userActivity", fields: [userId], references: [id])
   userId String @db.ObjectId
+  location Location? @relation("venueLocation")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -45,6 +48,10 @@ model Venue {
   logo String
   mainPhoto String
   bannerPhoto String
+  userVenue User @relation("userVenue", fields: [userVenueId], references: [id])
+  userVenueId String @db.ObjectId @unique
+  activityVenue Activity @relation("activityVenue", fields: [activityVenueId], references: [id])
+  activityVenueId String @db.ObjectId @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -58,6 +65,8 @@ model Location {
   postalCode String
   latitude String
   longitude String
+  activityLocation Activity @relation("venueLocation", fields: [activityLocationId], references: [id]) 
+  activityLocationId String @db.ObjectId @unique
 }
 
 enum Category {
