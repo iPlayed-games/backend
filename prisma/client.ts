@@ -15,8 +15,10 @@ async function main() {
          })
          console.log(loc)
 
-        
-
+        const ven = await prisma.venue.create({
+            data: mockData.venue.data1
+        })
+        console.log(ven)
     } catch(e) {
         console.error(e)
     } finally {

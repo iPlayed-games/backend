@@ -7,7 +7,7 @@ const locationId2 = new ObjectId()
 const venueID1 = new ObjectId()
 //const venueID2 = new ObjectId()
 const activityId1 = new ObjectId()
-const activityId2 = new ObjectId()
+//const activityId2 = new ObjectId()
 
 const location = {
     data1: {
@@ -51,7 +51,6 @@ const user = {
 
 const venue = {
     data1: {
-        //id: venueID1,
         name: "Play Center",
         email: "playcenter@gmail.com",
         description: "Write some descrition here",
@@ -59,11 +58,10 @@ const venue = {
         logo: "http://logo.iplayed.com",
         mainPhoto: "http://mainphoto.iplayed.com",
         bannerPhoto: "http://bannerphoto.iplayed.com",
-        userVenueId: userId1,
-        activityVenueId: activityId1
+        userVenueId: "55d294917ff44d30b4b08d9d",
+        activityVenueId: "66d294917ff44d30b4b08d9d"
     },
     data2: {
-        //id: venueID2,
         name: "Game Show",
         email: "gameshow@gmail.com",
         description: "Write some descrition here",
@@ -71,8 +69,8 @@ const venue = {
         logo: "http://logo.gameshow.com",
         mainPhoto: "http://mainphoto.gameshow.com",
         bannerPhoto: "http://bannerphoto.gameshow.com",
-        userVenueId: userId2,
-        activityVenueId: activityId2
+        userVenueId: "77d294917ff44d30b4b08d9d",
+        activityVenueId: "88d294917ff44d30b4b08d9d"
     }
 
 }
