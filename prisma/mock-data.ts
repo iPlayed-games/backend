@@ -5,41 +5,37 @@ const userId2 = new ObjectId()
 const locationId1 = new ObjectId()
 const locationId2 = new ObjectId()
 const venueID1 = new ObjectId()
-const venueID2 = new ObjectId()
+//const venueID2 = new ObjectId()
 const activityId1 = new ObjectId()
 const activityId2 = new ObjectId()
 
-export const locationData = {
+const location = {
     data1: {
-        id: locationId1,
         address: "1 Yonge Street",
         phone: "4575446666",
         city: "Toronto",
         postalCode: "M4P 020",
-        latitude: "42.0001231",
-        longitude: "-37.0293232",
-        activityLocationId: venueID1
+        latitude: "42.0",
+        longitude: "-37.0",      
     },
     data2: {
-        id: locationId2,
         address: "12 Mount Plaesant Rd",
         phone: "6475556969",
         city: "Toronto",
         postalCode: "M2P 120",
-        latitude: "42.4201231",
-        longitude: "-37.1293232",
-        activityLocationId: venueID2
+        latitude: "42.4",
+        longitude: "-37.1", 
     }
 }
 
-export const userData = {
+const user = {
     data1: {
         //id: userId1,
         name: "Daniel",
         email: "danielmjs609@gmail.com",
         password: "12345",
         wishList: ["1", "2"],
-        //activity: [activityId1],
+        activity: [],
         // venueId: [venueID1]
     },
     data2: {
@@ -53,9 +49,9 @@ export const userData = {
     }
 }
 
-export const venueData = {
+const venue = {
     data1: {
-        id: venueID1,
+        //id: venueID1,
         name: "Play Center",
         email: "playcenter@gmail.com",
         description: "Write some descrition here",
@@ -67,7 +63,7 @@ export const venueData = {
         activityVenueId: activityId1
     },
     data2: {
-        id: venueID2,
+        //id: venueID2,
         name: "Game Show",
         email: "gameshow@gmail.com",
         description: "Write some descrition here",
@@ -81,7 +77,7 @@ export const venueData = {
 
 }
 
-export const activityData = {
+const activity = {
     data1: {
         id: activityId1,
         name: "play game 1",
@@ -99,7 +95,7 @@ export const activityData = {
         location: locationId1
     },
     data2: {
-        id: activityId1,
+        //id: activityId1,
         name: "play Shop",
         description: "write something about the activity",
         image: "http://www.gameshop.com/image1",
@@ -117,3 +113,4 @@ export const activityData = {
 }
 
 
+export const mockData = { location, venue, activity, user }
