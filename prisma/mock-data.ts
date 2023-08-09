@@ -1,13 +1,5 @@
-import { ObjectId } from 'bson'
+import { Category, DifficultyRating } from "@prisma/client"
 
-const userId1 = new ObjectId()
-const userId2 = new ObjectId()
-const locationId1 = new ObjectId()
-const locationId2 = new ObjectId()
-const venueID1 = new ObjectId()
-//const venueID2 = new ObjectId()
-const activityId1 = new ObjectId()
-//const activityId2 = new ObjectId()
 
 const location = {
     data1: {
@@ -35,8 +27,7 @@ const user = {
         email: "danielmjs609@gmail.com",
         password: "12345",
         wishList: ["1", "2"],
-        activity: [],
-        // venueId: [venueID1]
+        
     },
     data2: {
         //id: userId2,
@@ -44,8 +35,7 @@ const user = {
         email: "raphael@gmail.com",
         password: "54321",
         wishList: ["2", "3"],
-        //activity: [activityId2],
-        // venueId: [venueID2]
+      
     }
 }
 
@@ -77,38 +67,37 @@ const venue = {
 
 const activity = {
     data1: {
-        id: activityId1,
         name: "play game 1",
         description: "write something about the activity",
         image: "http://www.playgame.com/image1",
-        venueId: venueID1,
         duration: 45,
-        category: "Indoor",
+        category: <Category> "Indoor",
         numPlayers: 7,
         minPlayers: 2,
         maxPlayers: 10,
-        difficultRating: "Normal",
+        difficultRating: <DifficultyRating> "Normal",
         likeReview: 4.8,
-        userId: userId1,
-        location: locationId1
+        userId: "22d38768d6ddcf97edae0a1a"
+        
     },
     data2: {
-        //id: activityId1,
         name: "play Shop",
         description: "write something about the activity",
         image: "http://www.gameshop.com/image1",
-        venueId: venueID1,
         duration: 60,
-        category: "Outdoor",
+        category: <Category> "Outdoor",
         numPlayers: 5,
         minPlayers: 4,
         maxPlayers: 12,
-        difficultRating: "Bad",
-        likeReview: 3.8,
-        userId: userId2,
-        location: locationId2 
+        difficultRating: <DifficultyRating> "Bad",
+        likeReview: 3.8, 
+        userId: "22d38768d6ddcf97edae0a1a"
     }
 }
+
+ 
+    
+  
 
 
 export const mockData = { location, venue, activity, user }

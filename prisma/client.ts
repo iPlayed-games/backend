@@ -25,7 +25,11 @@ async function main() {
         })
         console.log(userCreate)
 
-        
+        const activityCreate = await prisma.activity.create({
+            data: mockData.activity.data1
+        })
+        console.log(activityCreate)
+
     } catch(e) {
         console.error(e)
     } finally {
