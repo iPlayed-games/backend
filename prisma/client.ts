@@ -10,15 +10,22 @@ async function main() {
         await prisma.venue.deleteMany();
         await prisma.activity.deleteMany();
 
-        const loc = await prisma.location.createMany({
+        const locationCreate = await prisma.location.createMany({
            data: [mockData.location.data1, mockData.location.data2]
          })
-         console.log(loc)
+         console.log(locationCreate)
 
-        const ven = await prisma.venue.create({
+        const venueCreate = await prisma.venue.create({
             data: mockData.venue.data1
         })
-        console.log(ven)
+        console.log(venueCreate)
+
+        const userCreate = await prisma.user.create({
+            data: mockData.user.data1
+        })
+        console.log(userCreate)
+
+        
     } catch(e) {
         console.error(e)
     } finally {
