@@ -94,9 +94,4 @@ const activity = {
     }
 }
 
- 
-    
-  
-
-
 export const mockData = { location, venue, activity, user }
