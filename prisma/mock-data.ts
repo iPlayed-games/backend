@@ -7,16 +7,16 @@ const location = {
         phone: "4575446666",
         city: "Toronto",
         postalCode: "M4P 020",
-        latitude: "42.0",
-        longitude: "-37.0",      
+        latitude: 41,
+        longitude: -38,      
     },
     data2: {
         address: "12 Mount Plaesant Rd",
         phone: "6475556969",
         city: "Toronto",
         postalCode: "M2P 120",
-        latitude: "42.4",
-        longitude: "-37.1", 
+        latitude: 42,
+        longitude: -37, 
     }
 }
 
@@ -48,8 +48,8 @@ const venue = {
         logo: "http://logo.iplayed.com",
         mainPhoto: "http://mainphoto.iplayed.com",
         bannerPhoto: "http://bannerphoto.iplayed.com",
-        userVenueId: "55d294917ff44d30b4b08d9d",
-        activityVenueId: "66d294917ff44d30b4b08d9d"
+        activityId: "66d294917ff44d30b4b08d9d",
+        userId: "45d294917ff44d30b4b08d9d"
     },
     data2: {
         name: "Game Show",
@@ -59,8 +59,8 @@ const venue = {
         logo: "http://logo.gameshow.com",
         mainPhoto: "http://mainphoto.gameshow.com",
         bannerPhoto: "http://bannerphoto.gameshow.com",
-        userVenueId: "77d294917ff44d30b4b08d9d",
-        activityVenueId: "88d294917ff44d30b4b08d9d"
+        activityId: "88d294917ff44d30b4b08d9d",
+        userId: "35d294917ff44d30b4b08d9d"
     }
 
 }
@@ -91,7 +91,6 @@ const activity = {
         maxPlayers: 12,
         difficultRating: <DifficultyRating> "Bad",
         likeReview: 3.8, 
-        userId: "22d38768d6ddcf97edae0a1a"
     }
 }
 

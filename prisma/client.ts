@@ -10,8 +10,8 @@ async function main() {
         await prisma.venue.deleteMany();
         await prisma.activity.deleteMany();
 
-        const locationCreate = await prisma.location.createMany({
-           data: [mockData.location.data1, mockData.location.data2]
+        const locationCreate = await prisma.location.create({
+           data: mockData.location.data1
          })
          console.log(locationCreate)
 

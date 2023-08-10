@@ -8,8 +8,7 @@
     "dev": "ts-node src/server.ts",
     "lint": "tsc && eslint --ext *.ts,*.json ./src/** && prettier . --write",
     "prisma-update": "npx prisma db push",
-    "prisma-generate": "npx prisma generate",
-    "prisma-client": "ts-node prisma/client.ts"
+    "prisma-generate": "npx prisma generate"
   },
   "author": "",
   "license": "ISC",
