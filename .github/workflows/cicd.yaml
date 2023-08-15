@@ -19,7 +19,7 @@ jobs:
           node-version: '16.x'
       - name: Install dependencies
         run: npm install
-      - name: Running typescript compilter, eslint and prettier
+      - name: Running typescript compiler, eslint and prettier
         run: npm run lint
       - name: Running Jest
         run: npm run test

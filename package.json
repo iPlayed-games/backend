@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --testTimeout=3000",
     "dev": "ts-node src/server.ts",
-    "lint": "tsc && eslint --ext *.ts,*.json ./src/** && prettier . --write",
+    "lint": "tsc && eslint --ext 'src/*.ts,*.json' && prettier . --write",
     "prisma-update": "npx prisma db push",
     "prisma-generate": "npx prisma generate"
   },
