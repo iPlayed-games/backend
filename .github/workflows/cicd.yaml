@@ -3,17 +3,17 @@ name: BackEnd Workflow
 on: [pull_request]
 
 jobs:
-  run-checking-before-build:
+  run-checking:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: [16.x]
       - name: Install dependencies
         run: npm install
       - name: Running typescript compilter, eslint and prettier
-      - run: npm run lint
+      - run: npm lint
       - name: Running Jest
-      - run: npm run test
+      - run: npm test
