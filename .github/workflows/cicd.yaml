@@ -6,14 +6,20 @@ jobs:
   run-checking:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: checking version of Tools
+        run: |
+          node -v
+          npm -v
+          aws --version
+      - name: Get repo
+        uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: [16.x]
+          node-version: '16.x'
       - name: Install dependencies
         run: npm install
       - name: Running typescript compilter, eslint and prettier
-      - run: npm lint
+        run: npm lint
       - name: Running Jest
-      - run: npm test
+        run: npm test
