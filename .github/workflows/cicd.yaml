@@ -20,6 +20,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Running typescript compilter, eslint and prettier
-        run: npm lint
+        run: npm run lint
       - name: Running Jest
-        run: npm test
+        run: npm run test
