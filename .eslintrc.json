@@ -8,7 +8,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "ignorePatterns": ["node_modules", ".github", "prisma", "src/__test__/**/*.ts"],
+  "ignorePatterns": ["node_modules", ".github", "prisma"],
   "rules": {
     "no-console": "off",
     "no-var": "error",
