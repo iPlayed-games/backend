@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import { mockdata } from './mock-data'
+import { locationData, userData } from './mock-data'
 const prisma = new PrismaClient()
 
 // TODO: for testing purpose only
@@ -12,29 +12,33 @@ async function main() {
     await prisma.activity.deleteMany();
     // Create Methods
     const locationCreate = await prisma.location.create({
-      data: mockdata['user']
+      data: locationData
     })
     console.log(locationCreate)
+    const userCreate = await prisma.user.create({
+      data: userData
+    })
+    console.log(userCreate)
     const venueCreate = await prisma.venue.create({
-      data: mockdata['venue']
+      data: venueData
     })
     console.log(venueCreate)
     const activityCreate = await prisma.activity.create({
-      data: mockdata['activity']
+      data: activityData
     })
     console.log(activityCreate)
     // Find Users
-    // const userInfo = await prisma.user.findFirst({
-    //   include: {
-    //     venue: {
-    //       include: {
-    //         location: true,
-    //         Activity: true,
-    //       },
-    //     },
-    //   },
-    // })
-    // console.log(userInfo)
+    const userInfo = await prisma.user.findFirst({
+      include: {
+        venue: {
+          include: {
+            location: true,
+            activity: true,
+          },
+        },
+      },
+    })
+    console.log(userInfo)
   } catch (e) {
     console.error(e)
   } finally {

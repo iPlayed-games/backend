@@ -25,7 +25,7 @@ model User {
   email     String   @unique
   password  String
   username  String
-  totalBadge Int
+  totalBadge Int @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   venue     Venue?
@@ -41,7 +41,7 @@ model Venue {
   description String
   logo        String
   mainPhoto   String
-  categoty    Category   @default(Indoor)
+  category    Category   @default(Indoor)
   isAcessibility Boolean @default(false)
   workingHoursOpen Int
   workingHoursClose Int

@@ -22,7 +22,6 @@
     "noUnusedParameters": true /* Raise an error when a function parameter isn't read. */,
     "noImplicitReturns": true /* Enable error reporting for codepaths that do not explicitly return in a function. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
-    "suppressImplicitAnyIndexErrors": true
   },
   "ts-node": {
     "esm": true,

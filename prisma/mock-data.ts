@@ -1,8 +1,11 @@
-import { Category, User, Location, Venue, Activity } from '@prisma/client'
+import { Category } from '../src/types/enumCategory'
+import { type User } from '../src/types/user'
+import { type Location } from '../src/types/location'
+import { type Venue } from '../src/types/venue'
+import { type Activity } from '../src/types/activity'
 
 //FIXME: add typescript types, change structure to array objects, export individual
-let location: Location = {
-    id: '95d294917ff44d30b4b08d9d',
+export const locationData: Location = {
     address: '1 Yonge Street',
     phone: '4575446666',
     city: 'Toronto',
@@ -10,28 +13,27 @@ let location: Location = {
     latitude: 41,
     longitude: -38,
 }
-let user: User = {
-    id: '45d294917ff44d30b4b08d9d',
+export const userData: User = {
     name: 'Daniel',
     email: 'danielmjs609@gmail.com',
     password: '12345',
     username: 'danielmjs',
-    totalBadge: 5
+    totalBadge: 5,
 }
-let venue: Venue = {
-    id: '85d294917ff44d30b4b08d9d',
+export const venueData: Venue = {
     name: 'Play Center',
     email: 'playcenter@gmail.com',
+    //locationId: "25d294917ff44d30b4b08d9d",
     description: 'Write some descrition here',
     logo: 'http://logo.iplayed.com',
     mainPhoto: 'http://mainphoto.iplayed.com',
+    category: <Category>'Indoor',
     isAcessibility: false,
     workingHoursOpen: 1692349200000, //9am
     workingHoursClose: 1692381600000, //6pm
-    userId: '45d294917ff44d30b4b08d9d',
+    //userId: '45d294917ff44d30b4b08d9d',
 }
-let activity: Activity = {
-    id: '75d294917ff44d30b4b08d9d',
+export const activityData: Activity = {
     name: 'play game 1',
     description: 'write something about the activity',
     image: 'http://www.playgame.com/image1',
@@ -42,8 +44,9 @@ let activity: Activity = {
     minPlayers: 2,
     maxPlayers: 10,
     ageRestriction: 18,
+    locationId: "25d294917ff44d30b4b08d9d",
     price: 50.00,
 }
-export const mockdata = [location, user, venue, activity]
+
     
 
