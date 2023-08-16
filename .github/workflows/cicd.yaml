@@ -1,0 +1,41 @@
+name: BackEnd CICD
+
+on: [pull_request]
+
+jobs:
+  run-checking:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check tool versions
+        run: |
+          node -v
+          npm -v
+          aws --version
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+
+      - name: Cache Dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: temp-${{ runner.os }}-cache-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            temp-${{ runner.os }}-cache-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run typescript compiler, eslint and prettier
+        run: |
+          npm run lint
+          
+      - name: Run unit tests
+        run: |
+          npm run test
+
