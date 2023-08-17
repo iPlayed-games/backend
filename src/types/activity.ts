@@ -5,14 +5,14 @@ export type Activity = {
   name: string
   description: string
   image: string
-  venueId?: string
+  venueId: string
   startTimes: number[]
   duration: number
   category: Category
   minPlayers: number
   maxPlayers: number
-  ageRestriction?: number
-  locationId?: string
+  ageRestriction: number
+  locationId: string
   price: number
 }
 

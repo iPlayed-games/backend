@@ -1,11 +1,11 @@
-import { type Activity } from './activity'
+//import { type Activity } from './activity'
 import { Category } from './enumCategory'
 
 export type Venue = {
     name: string
     email: string
     //activity?: Activity[]
-    //locationId?: string | any
+    locationId: string
     description: string
     logo: string
     mainPhoto: string
@@ -13,5 +13,5 @@ export type Venue = {
     isAcessibility: boolean
     workingHoursOpen: number
     workingHoursClose: number
-    //userId?: string     
+    userId: string     
   }

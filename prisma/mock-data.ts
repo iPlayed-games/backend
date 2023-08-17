@@ -15,15 +15,15 @@ export const locationData: Location = {
 }
 export const userData: User = {
     name: 'Daniel',
-    email: 'danielmjs609@gmail.com',
+    email: 'danielmjs998@gmail.com',
     password: '12345',
     username: 'danielmjs',
     totalBadge: 5,
 }
 export const venueData: Venue = {
-    name: 'Play Center',
-    email: 'playcenter@gmail.com',
-    //locationId: "25d294917ff44d30b4b08d9d",
+    name: 'Play Center 1',
+    email: 'playcenter1@gmail.com',
+    locationId: "25d294917ff44d30b4b08d9d",
     description: 'Write some descrition here',
     logo: 'http://logo.iplayed.com',
     mainPhoto: 'http://mainphoto.iplayed.com',
@@ -31,7 +31,7 @@ export const venueData: Venue = {
     isAcessibility: false,
     workingHoursOpen: 1692349200000, //9am
     workingHoursClose: 1692381600000, //6pm
-    //userId: '45d294917ff44d30b4b08d9d',
+    userId: '45d294917ff44d30b4b08d9d',
 }
 export const activityData: Activity = {
     name: 'play game 1',
