@@ -24,7 +24,8 @@ model User {
   name      String
   email     String   @unique
   password  String
-  wishList  String[]
+  username  String
+  totalBadge Int @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   venue     Venue?
@@ -32,18 +33,20 @@ model User {
 
 model Venue {
   id          String     @id @default(auto()) @map("_id") @db.ObjectId
-  name        String     @unique
+  name        String     
   email       String
-  description String
-  reviews     String
-  logo        String
-  mainPhoto   String
-  bannerPhoto String
+  activity    Activity[]
   location    Location   @relation(fields: [locationId], references: [id])
   locationId  String     @db.ObjectId
+  description String
+  logo        String
+  mainPhoto   String
+  category    Category   @default(Indoor)
+  isAcessibility Boolean @default(false)
+  workingHoursOpen Int
+  workingHoursClose Int
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
-  Activity    Activity[]
   user        User       @relation(fields: [userId], references: [id])
   userId      String     @unique @db.ObjectId
 }
@@ -55,17 +58,17 @@ model Activity {
   image           String
   venue           Venue            @relation(fields: [venueId], references: [id])
   venueId         String           @unique @db.ObjectId
+  startTimes  Int[]
   duration        Int
   category        Category         @default(Indoor)
-  numPlayers      Int
   minPlayers      Int
   maxPlayers      Int
-  difficultRating DifficultyRating @default(Normal)
-  likeReview      Float
+  ageRestriction Int
   createdAt       DateTime         @default(now())
   updatedAt       DateTime         @updatedAt
   location        Location         @relation(fields: [locationId], references: [id])
   locationId      String           @db.ObjectId
+  price Float
 }
 
 enum Category {
@@ -73,12 +76,4 @@ enum Category {
   Outdoor
   Aerial
   Aquatic
-}
-
-enum DifficultyRating {
-  Boring
-  Bad
-  Normal
-  Good
-  Exciting
 }
