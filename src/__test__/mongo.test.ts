@@ -1,4 +1,4 @@
-import mongoose from '../database/mongo'
+import mongoose from '../config/mongo/mongo'
 
 describe('Testing connections', () => {
   /* Connecting to the database before each test. */
