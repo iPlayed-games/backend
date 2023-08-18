@@ -34,8 +34,7 @@ jobs:
       - name: Run typescript compiler, eslint and prettier
         run: |
           npm run lint
-          
+
       - name: Run unit tests
         run: |
           npm run test
-
