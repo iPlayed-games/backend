@@ -6,7 +6,7 @@ export type Venue = {
   description: string
   logo: string
   mainPhoto: string
-  category: Category
+  category: Category[]
   isAcessibility: boolean
   workingHoursOpen: number
   workingHoursClose: number
