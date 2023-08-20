@@ -65,13 +65,17 @@ After completing your component and you are ready to commit do the following...
 ## Scripts
 
 - dev: Start the Express development server.
+- dev:seed: Start the Express development server with seed data.
 - build: Build the Express project.
 - lint: Run TypeScript, Express linting, and auto-format with Prettier.
 - test: Run Jest tests.
+- prisma-update: Executes the changes required to make your database schema reflect the state of your Prisma schema
+- prisma-generate: Generate Prisma Client
+
 
 ## Dependencies
 
-- @prisma/client: auto-generated, type-safe and modern JavaScript/TypeScript ORM for Node.js that's tailored to your data.
+- \@prisma/client\: auto-generated, type-safe and modern JavaScript/TypeScript ORM for Node.js that's tailored to your data.
 - body-parser: Node.js body parsing middleware.
 - dotenv: Zero-dependency module that loads environment variables from a .env file into process.env.
 - express: Flexible Node.js web application framework
@@ -79,18 +83,16 @@ After completing your component and you are ready to commit do the following...
 - prisma: Node.js and TypeScript Object-Relational Mapping (ORM)
 
 ## Dev Dependencies
-- @types/dotenv: Types for DotNet.
-- @types/express: Types for Express.
-- @types/jest: TypeScript types for Jest.
-- @types/node: Types for Node.js.
-- @typescript-eslint/eslint-plugin: Load custim rules and rukes configurtion list from typescript-eslint.
-- @typescript-eslint/parser: Parse to convert typescript to use ESLint.
+- \@types/dotenv\: Types for DotNet.
+- \@types/express\: Types for Express.
+- \@types/jest\: TypeScript types for Jest.
+- \@types/node\: Types for Node.js.
+- \@typescript-eslint/eslint-plugin\: Load custim rules and rukes configurtion list from typescript-eslint.
+- \@typescript-eslint/parser\: Parse to convert typescript to use ESLint.
 - eslint: ESLint for code linting.
 - eslint-config-prettier: ESLint config to disable ESLint formatting rules in favor of Prettier.
-- eslint-config-xo: ESLint shareable config for XO.
-- eslint-config-xo-typescript: ESLint shareable config for TypeScript to be used with eslint-config-xo.
 - jest: Testing framework.
-- jest-environment-jsdom: JSDom environment for Jest.
+- nodemon: Automatically restarting the node application when file changes
 - prettier: Code formatter.
 - ts-jest: Jest transformer to test projects written in TypeScript
 - ts-node: TypeScript execution engine and REPL for Node.js
