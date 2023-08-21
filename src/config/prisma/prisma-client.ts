@@ -7,9 +7,15 @@ const prisma = new PrismaClient()
 export async function startORM() {
   try {
     await prisma.$connect()
+    
+    /* TEST USE ONLY*/
+    // await prisma.activity.deleteMany()
+    // await prisma.venue.deleteMany()
+    // await prisma.location.deleteMany()
+    // await prisma.user.deleteMany()
 
     if (process.argv[process.argv.length - 1] === 'seed') {
-      await prisma.user.create({
+      const createUser = await prisma.user.create({
         data: {
           ...userData,
           venue: {
@@ -39,6 +45,10 @@ export async function startORM() {
           },
         },
       })
+      
+      /* TEST USE ONLY*/
+      // console.log(createUser)
+
       await prisma.$disconnect()
       shutDown('database successful seeded')
     }
