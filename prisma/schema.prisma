@@ -41,7 +41,7 @@ model Venue {
   description       String
   logo              String
   mainPhoto         String
-  category          Category   @default(Indoor)
+  category          Category[]
   isAcessibility    Boolean    @default(false)
   workingHoursOpen  Int
   workingHoursClose Int

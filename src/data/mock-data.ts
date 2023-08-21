@@ -27,7 +27,7 @@ export const venueData: Venue = {
   description: 'Write some descrition here',
   logo: 'http://logo.iplayed.com',
   mainPhoto: 'http://mainphoto.iplayed.com',
-  category: <Category>'Indoor',
+  category: <Category[]>['Indoor'],
   isAcessibility: false,
   workingHoursOpen: 1692349200000, //9am
   workingHoursClose: 1692381600000, //6pm
