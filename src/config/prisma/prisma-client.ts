@@ -15,36 +15,40 @@ export async function startORM() {
     // await prisma.user.deleteMany()
 
     if (process.argv[process.argv.length - 1] === 'seed') {
-      await prisma.user.create({
-        data: {
-          ...userData,
-          venue: {
-            create: {
-              ...venueData,
-              location: {
-                create: locationData,
-              },
-              activities: {
-                create: [
-                  {
-                    ...activityData,
-                    location: {
-                      create: locationData,
-                    },
-                  },
-                ],
+      for (let i=0; i<userData.length; i++){
+        const user = await prisma.user.create({
+          data: {
+            ...userData[i],
+            venue: {
+              create: {
+                ...venueData[i],
+                location: {
+                  create: locationData[i],
+                },
               },
             },
           },
-        },
-        include: {
-          venue: {
-            include: {
-              activities: true,
+          include: {
+            venue: {
             },
           },
-        },
-      })
+        })
+        await prisma.activity.create({
+          data:{
+            ...activityData[i],
+            venue:{
+              connect: {
+                id: user.venue?.id
+              }
+            },
+            location:{
+              connect: {
+                id: user.venue?.locationId
+              }
+            }
+          }
+        })
+      }
 
       await prisma.$disconnect()
       shutDown('database successful seeded')
