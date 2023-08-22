@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import { shutDown } from '../../utils/shutdown-server'
+// import { shutDown } from '../../utils/shutdown-server'
 import { activityData, locationData, userData, venueData } from '../../data/mock-data'
 
 const prisma = new PrismaClient()
@@ -46,8 +46,8 @@ export async function startORM() {
         },
       })
 
-      await prisma.$disconnect()
-      shutDown('database successful seeded')
+      // await prisma.$disconnect()
+      // shutDown('database successful seeded')
     }
   } catch (err) {
     console.error(err)
