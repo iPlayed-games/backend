@@ -1,24 +1,18 @@
-type IncludeActivityType = {
+type IncludeType <T extends string>= {
   include: {
-    activity: boolean
+    [properties in T]: boolean
   }
 }
 
-type IncludeVenueType = {
-  include: {
-    venue: boolean
-  }
-}
-
-// TODO: transform in generic T (e.g Activity, Venue, User)
-export const AllIncludeActivity: IncludeActivityType = {
+export const AllIncludeActivity: IncludeType<"activity"> = {
   include: {
     activity: true,
   },
 }
 
-export const AllIncludeVenue: IncludeVenueType = {
+export const AllIncludeVenue: IncludeType<"venue">= {
   include: {
     venue: true,
   },
 }
+
