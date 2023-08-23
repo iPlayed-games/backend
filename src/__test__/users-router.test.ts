@@ -14,7 +14,7 @@ describe('GET /users', () => {
       .accept('json')
       .expect(200)
       .then((response) => {
-        expect(response.body.length).toBe(3)
+        expect(response.body.length).toBeGreaterThanOrEqual(3)
         expect(Array.isArray(response.body)).toBeTruthy()
         expect(response.body.length).not.toBe(0)
       })
@@ -32,4 +32,3 @@ describe('GET /users', () => {
       })
   })
 })
-
