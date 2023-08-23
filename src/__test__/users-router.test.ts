@@ -28,7 +28,7 @@ describe('GET /users', () => {
       .then((response) => {
         expect(response.body[0].email).toEqual('raphael1@gmail.com')
         expect(response.body[0].venue.name).toEqual('Play Center 1')
-        expect(response.body[0].venue.activity.length).toBeNull()
+        expect(response.body[0].venue.activity?.length).toBeUndefined()
       })
   })
 })
