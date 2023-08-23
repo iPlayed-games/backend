@@ -9,10 +9,10 @@ export async function startORM() {
     await prisma.$connect()
 
     /* TEST USE ONLY*/
-    //await prisma.activity.deleteMany()
-    //await prisma.venue.deleteMany()
-    //await prisma.location.deleteMany()
-    //await prisma.user.deleteMany()
+    // await prisma.activity.deleteMany()
+    // await prisma.venue.deleteMany()
+    // await prisma.location.deleteMany()
+    // await prisma.user.deleteMany()
 
     if (process.argv[process.argv.length - 1] === 'seed') {
       for (let i = 0; i < userData.length; i++) {
