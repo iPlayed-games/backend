@@ -1,5 +1,5 @@
-
 import { PrismaClient } from '@prisma/client'
+import { shutDown } from '../../utils/shutdown-server'
 import { activityData, locationData, userData, venueData } from '../../data/mock-data'
 
 const prisma = new PrismaClient()
@@ -7,15 +7,15 @@ const prisma = new PrismaClient()
 export async function startORM() {
   try {
     await prisma.$connect()
-    
+
     /* TEST USE ONLY*/
-    // await prisma.activity.deleteMany()
-    // await prisma.venue.deleteMany()
-    // await prisma.location.deleteMany()
-    // await prisma.user.deleteMany()
+    //await prisma.activity.deleteMany()
+    //await prisma.venue.deleteMany()
+    //await prisma.location.deleteMany()
+    //await prisma.user.deleteMany()
 
     if (process.argv[process.argv.length - 1] === 'seed') {
-      for (let i=0; i<userData.length; i++){
+      for (let i = 0; i < userData.length; i++) {
         const user = await prisma.user.create({
           data: {
             ...userData[i],
@@ -29,27 +29,28 @@ export async function startORM() {
             },
           },
           include: {
-            venue: {
-            },
+            venue: {},
           },
         })
         await prisma.activity.create({
-          data:{
+          data: {
             ...activityData[i],
-            venue:{
+            venue: {
               connect: {
-                id: user.venue?.id
-              }
+                id: user.venue?.id,
+              },
             },
-            location:{
+            location: {
               connect: {
-                id: user.venue?.locationId
-              }
-            }
-          }
+                id: user.venue?.locationId,
+              },
+            },
+          },
         })
       }
     }
+    await prisma.$disconnect()
+    shutDown('database successful seeded')
   } catch (err) {
     console.error(err)
     await prisma.$disconnect()
@@ -57,5 +58,3 @@ export async function startORM() {
 }
 
 export default prisma
-
-
