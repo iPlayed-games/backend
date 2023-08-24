@@ -7,7 +7,6 @@ export const getAllVenues = async (_req: Request, res: Response): Promise<void> 
 }
 
 export const getOneVenueById = async (req: Request, res: Response): Promise<void> => {
-    const venueById = await venueService.getVenueById(req.params.id)
-    res.send(venueById);
-    
+  const venueById = await venueService.getVenueById(req.params.id)
+  res.send(venueById)
 }

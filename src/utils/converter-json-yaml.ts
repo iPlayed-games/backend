@@ -10,4 +10,3 @@ export function convertToYAML(locationPath: string, filename: string) {
   const convertedFile = YAML.parse(file)
   return convertedFile
 }
-
