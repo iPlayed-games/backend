@@ -7,12 +7,11 @@ export async function getAllVenues(): Promise<Venue[]> {
 }
 
 
-export async function getVenueById(venueId: string) {
-    return prisma.venue.findUnique({
-        where:{
-            id: venueId
-        }})
-  
+export async function getVenueById(venueId: string): Promise<Venue> {
+  const venue = await prisma.venue.findUniqueOrThrow({
+    where: {
+      id: venueId
+    }
+  })
+  return venue  
 }
-
-
