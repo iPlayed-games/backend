@@ -1,0 +1,173 @@
+openapi: 3.0.3
+info:
+  title: IPlayed Games - Swagger
+  description: >-
+    This is a documentation from our Server based on the OpenAPI 3.0
+    specification.
+    Tools:
+    - [BackEnd Repository](https://github.com/iPlayed-games/backend)
+    - [Convert JSON response to YAML schema](https://bikcrum.github.io/Swagger-JSON-Schema-In-YAML_webversion/)
+  termsOfService: https://github.com/iPlayed-games/backend
+  contact:
+    email: apiteam@iplayed.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.11
+servers:
+  - url: https://localhost:3001/
+tags:
+  - name: Users
+    description: Access to User data
+  - name: Venues
+    description: Access to Venue data
+  - name: Activities
+    description: Access to activity data
+paths:
+  /users:
+    get:
+      tags:
+        - Users
+      summary: Find all users with Venue associated
+      description: Collect an array with users and their venue
+      operationId: getAllUsers
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound' 
+  /venues:
+    get:
+      tags:
+        - Venues
+      summary: Find all venues with activity associated
+      description: receive an array with venue and activities
+      operationId: getAllVenues
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound' 
+  /venues/{venueId}:
+    get:
+      tags:
+        - Venues
+      summary: Find venue by ID
+      description: Returns a single venue
+      operationId: getVenueById
+      parameters:
+        - name: venueId
+          in: path
+          description: ID of venue
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound' 
+
+components:    
+  responses:
+    Success:
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Success'
+    NotFound:
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Unauthorized'
+  schemas:
+    Success:
+      type: string
+      example: 'Operation Sucessful'
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '404'
+        message:
+          type: string
+          example: 'Something wrong'
+      required:
+        - code
+        - message
+    Unauthorized:
+        type: string
+        example: "Unauthorized user. Missing Token required"
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        username:
+          type: string
+        totalBadge:
+          type: number
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        venue:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            email:
+              type: string
+            locationId:
+              type: string
+            description:
+              type: string
+            logo:
+              type: string
+            mainPhoto:
+              type: string
+            category:
+              type: array
+              items:
+                type: string
+            isAcessibility:
+              type: boolean
+            workingHoursOpen:
+              type: number
+            workingHoursClose:
+              type: number
+            createdAt:
+              type: string
+            updatedAt:
+              type: string
+            userId:
+              type: string
