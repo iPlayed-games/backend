@@ -1,4 +1,4 @@
-# iplayed-backend
+# IPlayed-backend
 
 Welcome to iplayed-backend – the backend component of our exciting developer group's projects!
 
@@ -54,6 +54,12 @@ To run the development server, use the following command:
 
 This will start the Express development server and allow you to preview your backend.
 
+## Endpoints API using Swagger UI
+
+To run swagger docs, run the server and open:
+
+`http://localhost:3001/api-docs`
+
 ## Commiting
 
 [Branch out](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) by following the structure [ISSUE-ID]-[Similar ticket title] and submit your [PR](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests). For example: `9-Login_form`
@@ -72,7 +78,6 @@ After completing your component and you are ready to commit do the following...
 - prisma-update: Executes the changes required to make your database schema reflect the state of your Prisma schema
 - prisma-generate: Generate Prisma Client
 
-
 ## Dependencies
 
 - \@prisma/client\: auto-generated, type-safe and modern JavaScript/TypeScript ORM for Node.js that's tailored to your data.
@@ -81,23 +86,28 @@ After completing your component and you are ready to commit do the following...
 - express: Flexible Node.js web application framework
 - mongoose: Node.js based Object Data Modeling (ODM) library.
 - prisma: Node.js and TypeScript Object-Relational Mapping (ORM)
+- swagger-ui-express: auto-generated swagger-ui generated API docs from express
 
 ## Dev Dependencies
+
 - \@types/dotenv\: Types for DotNet.
 - \@types/express\: Types for Express.
 - \@types/jest\: TypeScript types for Jest.
 - \@types/node\: Types for Node.js.
 - \@typescript-eslint/eslint-plugin\: Load custim rules and rukes configurtion list from typescript-eslint.
 - \@typescript-eslint/parser\: Parse to convert typescript to use ESLint.
+- \@types/supertest\: Types for SuperTest
+- \@types/swagger-ui-express\: Types for Swagger
 - eslint: ESLint for code linting.
 - eslint-config-prettier: ESLint config to disable ESLint formatting rules in favor of Prettier.
 - jest: Testing framework.
 - nodemon: Automatically restarting the node application when file changes
 - prettier: Code formatter.
+- superTest: create testing for e2e-integrations.
+- yaml: converted YAML <=> JSON.
 - ts-jest: Jest transformer to test projects written in TypeScript
 - ts-node: TypeScript execution engine and REPL for Node.js
 - typescript: TypeScript for static typing.
-
 
 ## Contributing
 

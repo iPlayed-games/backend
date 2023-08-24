@@ -1,7 +1,6 @@
 import { type Venue } from '@prisma/client'
 import prisma from '../config/prisma/prisma-client'
 
-
 export async function getAllVenues(): Promise<Venue[]> {
   return prisma.venue.findMany()
 }
