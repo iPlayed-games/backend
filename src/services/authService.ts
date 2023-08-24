@@ -1,9 +1,9 @@
 import { type User } from '@prisma/client'
-import { type User as user } from '../types/user'
+import { type User as createUser } from '../types/user'
 import prisma from '../config/prisma/prisma-client'
 
-export async function login(email: string): Promise<string> {
-  // TODO: Add JWT functionality to user login
+export async function login(email: string, password: string): Promise<string> {
+  // TODO: Add JWT functionality to user login with password
   console.log(email)
   return 'You Hit the login endpoint'
 
@@ -17,7 +17,7 @@ export async function login(email: string): Promise<string> {
   // }
 }
 
-export async function signUp(req: user): Promise<User> {
+export async function signUp(req: createUser): Promise<User> {
   //TODO: Add JWT functionality to user creation
   return await prisma.user.create({ data: { ...req } })
 }
