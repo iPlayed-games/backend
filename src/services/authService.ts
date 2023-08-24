@@ -5,6 +5,7 @@ import prisma from '../config/prisma/prisma-client'
 export async function login(email: string, password: string): Promise<string> {
   // TODO: Add JWT functionality to user login with password
   console.log(email)
+  console.log(password)
   return 'You Hit the login endpoint'
 
   // Type Issues with findUnique: https://github.com/prisma/prisma/issues/10903
