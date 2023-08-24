@@ -48,9 +48,9 @@ export async function startORM() {
           },
         })
       }
+      await prisma.$disconnect()
+      shutDown('database successful seeded')
     }
-    await prisma.$disconnect()
-    shutDown('database successful seeded')
   } catch (err) {
     console.error(err)
     await prisma.$disconnect()
