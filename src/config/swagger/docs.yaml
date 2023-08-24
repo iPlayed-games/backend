@@ -43,7 +43,7 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
         '404':
-          $ref: '#/components/responses/NotFound' 
+          $ref: '#/components/responses/NotFound'
   /venues:
     get:
       tags:
@@ -57,7 +57,7 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
         '404':
-          $ref: '#/components/responses/NotFound' 
+          $ref: '#/components/responses/NotFound'
   /venues/{venueId}:
     get:
       tags:
@@ -78,9 +78,9 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
         '404':
-          $ref: '#/components/responses/NotFound' 
+          $ref: '#/components/responses/NotFound'
 
-components:    
+components:
   responses:
     Success:
       description: Successful operation
@@ -117,8 +117,8 @@ components:
         - code
         - message
     Unauthorized:
-        type: string
-        example: "Unauthorized user. Missing Token required"
+      type: string
+      example: 'Unauthorized user. Missing Token required'
     User:
       type: object
       properties:

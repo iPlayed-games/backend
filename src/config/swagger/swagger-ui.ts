@@ -5,4 +5,3 @@ const swaggerJSONParsed = convertToYAML('/src/config/swagger/', 'docs.yaml')
 
 export const swaggerServer = swaggerUi.serve
 export const swaggerDocumented = swaggerUi.setup(swaggerJSONParsed)
-
