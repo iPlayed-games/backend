@@ -8,7 +8,6 @@ const app: Express = express()
 
 // Middleware
 app.use(bodyParser.json())
-app.use(express.static('public'))
 
 // Routes
 app.use('/users', userRouter)
