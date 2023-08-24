@@ -72,7 +72,6 @@ After completing your component and you are ready to commit do the following...
 - prisma-update: Executes the changes required to make your database schema reflect the state of your Prisma schema
 - prisma-generate: Generate Prisma Client
 
-
 ## Dependencies
 
 - \@prisma/client\: auto-generated, type-safe and modern JavaScript/TypeScript ORM for Node.js that's tailored to your data.
@@ -83,6 +82,7 @@ After completing your component and you are ready to commit do the following...
 - prisma: Node.js and TypeScript Object-Relational Mapping (ORM)
 
 ## Dev Dependencies
+
 - \@types/dotenv\: Types for DotNet.
 - \@types/express\: Types for Express.
 - \@types/jest\: TypeScript types for Jest.
@@ -97,7 +97,6 @@ After completing your component and you are ready to commit do the following...
 - ts-jest: Jest transformer to test projects written in TypeScript
 - ts-node: TypeScript execution engine and REPL for Node.js
 - typescript: TypeScript for static typing.
-
 
 ## Contributing
 
