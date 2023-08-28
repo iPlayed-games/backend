@@ -4,9 +4,9 @@ type IncludeType<T extends string> = {
   }
 }
 
-export const AllIncludeActivity: IncludeType<'activity'> = {
+export const AllIncludeActivity: IncludeType<'activities'> = {
   include: {
-    activity: true,
+    activities: true,
   },
 }
 
