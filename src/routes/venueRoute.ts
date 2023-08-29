@@ -1,5 +1,5 @@
 import express from 'express'
-import { getAllVenues, getOneVenueById } from 'controller/venueController'
+import { getAllVenues, getOneVenueById } from '@controller/venueController'
 
 const venueRouter = express.Router()
 

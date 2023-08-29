@@ -22,14 +22,14 @@
     "noImplicitReturns": true /* Enable error reporting for codepaths that do not explicitly return in a function. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "paths": {
-      "utils/*": ["./src/utils/*"],
-      "data/*": ["./src/data/*"],
-      "controller/*": ["./src/controller/*"],
-      "types/*": ["./src/types/*"],
-      "config/*": ["./src/config/*"],
-      "routes/*": ["./src/routes/*"],
-      "queries/*": ["./src/queries/*"],
-      "services/*": ["./src/services/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@data/*": ["./src/data/*"],
+      "@controller/*": ["./src/controller/*"],
+      "@types/*": ["./src/types/*"],
+      "@config/*": ["./src/config/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@queries/*": ["./src/queries/*"],
+      "@services/*": ["./src/services/*"]
     }
   },
   "ts-node": {
