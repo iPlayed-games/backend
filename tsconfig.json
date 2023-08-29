@@ -25,13 +25,11 @@
       "@utils/*": ["./src/utils/*"],
       "@data/*": ["./src/data/*"],
       "@controller/*": ["./src/controller/*"],
-      "types/*": ["./src/types/*"],
+      "@typing/*": ["./src/typing/*"],
       "@config/*": ["./src/config/*"],
       "@routes/*": ["./src/routes/*"],
       "@queries/*": ["./src/queries/*"],
       "@services/*": ["./src/services/*"],
-      "@test/*": ["./src/__test__/*"]
-
     }
   },
   "ts-node": {
