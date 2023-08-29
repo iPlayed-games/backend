@@ -25,11 +25,13 @@
       "@utils/*": ["./src/utils/*"],
       "@data/*": ["./src/data/*"],
       "@controller/*": ["./src/controller/*"],
-      "@types/*": ["./src/types/*"],
+      "types/*": ["./src/types/*"],
       "@config/*": ["./src/config/*"],
       "@routes/*": ["./src/routes/*"],
       "@queries/*": ["./src/queries/*"],
-      "@services/*": ["./src/services/*"]
+      "@services/*": ["./src/services/*"],
+      "@test/*": ["./src/__test__/*"]
+
     }
   },
   "ts-node": {
