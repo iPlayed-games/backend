@@ -4,12 +4,6 @@ type IncludeType<T extends string> = {
   }
 }
 
-
-
-
-
-
-
 export const AllIncludeActivity: IncludeType<'activities'> = {
   include: {
     activities: true,
