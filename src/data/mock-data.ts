@@ -1,8 +1,8 @@
-import { Category } from '../types/enumCategory'
-import { type User } from '../types/user'
-import { type Location } from '../types/location'
-import { type Venue } from '../types/venue'
-import { type Activity } from '../types/activity'
+import { Category } from '@typing/enumCategory'
+import { type User } from '@typing/user'
+import { type Location } from '@typing/location'
+import { type Venue } from '@typing/venue'
+import { type Activity } from '@typing/activity'
 
 export const locationData: Location[] = [
   {

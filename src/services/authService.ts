@@ -1,6 +1,6 @@
 import { type User } from '@prisma/client'
-import { type User as CreateUser } from '../types/user'
-import prisma from '../config/prisma/prisma-client'
+import { type User as CreateUser } from "@typing/user"
+import prisma from '@config/prisma/prisma-client'
 
 export async function login(email: string, password: string): Promise<string> {
   // TODO: Add JWT functionality to user login with password

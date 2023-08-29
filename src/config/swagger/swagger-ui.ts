@@ -1,5 +1,5 @@
 import swaggerUi from 'swagger-ui-express'
-import { convertToYAML } from '../../utils/converter-json-yaml'
+import { convertToYAML } from '@utils/converter-json-yaml'
 
 const swaggerJSONParsed = convertToYAML('/src/config/swagger/', 'docs.yaml')
 
