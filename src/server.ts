@@ -1,7 +1,7 @@
 import app from './app'
 // Import { startDatabase } from './config/mongo/mongo'
 import dotenv from 'dotenv'
-import { startORM } from '@config/prisma/prisma-client'
+import { startORM } from './config/prisma/prisma-client'
 
 dotenv.config()
 

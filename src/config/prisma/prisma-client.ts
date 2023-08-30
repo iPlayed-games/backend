@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client'
-import { shutDown } from '@utils/shutdown-server'
-import { activityData, locationData, userData, venueData } from '@data/mock-data'
+import { shutDown } from '../../utils/shutdown-server'
+import { activityData, locationData, userData, venueData } from '../../data/mock-data'
 
 const prisma = new PrismaClient()
 
