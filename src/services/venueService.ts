@@ -1,6 +1,6 @@
 import { type Venue } from '@prisma/client'
-import prisma from '@config/prisma/prisma-client'
-import { AllIncludeActivity } from '@queries/queries'
+import prisma from '../config/prisma/prisma-client'
+import { AllIncludeActivity } from '../queries/queries'
 
 export async function getAllVenues(): Promise<Venue[]> {
   return await prisma.venue.findMany(AllIncludeActivity)

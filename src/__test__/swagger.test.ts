@@ -1,4 +1,4 @@
-import { convertToYAML } from '@utils/converter-json-yaml'
+import { convertToYAML } from '../utils/converter-json-yaml'
 import fs from 'fs'
 
 describe('Testing Converting', () => {
