@@ -3,8 +3,13 @@ import prisma from '../config/prisma/prisma-client'
 import { AllIncludeActivity } from '../queries/queries'
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library'
 
-export async function getAllVenues(): Promise<Venue[]> {
-  return await prisma.venue.findMany(AllIncludeActivity)
+export async function getAllVenues(): Promise<Venue[] | {}> {
+  const venues = await prisma.venue.findMany(AllIncludeActivity)
+  if (venues) {
+    return venues
+  } else {
+    return { code: 404, message: 'Cannot find any venues in the system.' }
+  }
 }
 
 export async function getVenueById(venueId: string): Promise<Venue | {}> {
@@ -17,9 +22,9 @@ export async function getVenueById(venueId: string): Promise<Venue | {}> {
     })
   } catch (err) {
     if (err instanceof PrismaClientKnownRequestError) {
-      return { realErrorMessage: err, message: 'Cannot find venue with id: ' + venueId }
+      return { realErrorMessage: err, code: 404, message: 'Cannot find venue with id: ' + venueId }
     } else {
-      return { realErrorMessage: err, message: 'Something has gone wrong...' }
+      return { realErrorMessage: err, code: 500, message: 'Something has gone wrong...' }
     }
   }
 }
