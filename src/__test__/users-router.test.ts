@@ -15,7 +15,7 @@ describe('GET /users', () => {
       .expect(200)
       .then((response) => {
         const { data } = response.body
-        expect(data).toBeGreaterThanOrEqual(3)
+        expect(data.length).toBeGreaterThanOrEqual(3)
         expect(Array.isArray(data)).toBeTruthy()
         expect(data).not.toBe(0)
       })
