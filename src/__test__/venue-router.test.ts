@@ -34,20 +34,13 @@ describe('GET /venues', () => {
 })
 
 describe('GET /venues/:id', () => {
-    test('given venue that does not exist', function () {
-    const venueId: string = "venue-123"
-      request(app)
-        .get(`/venues/${venueId}`)
-        .accept('json')
-        .expect(404)
-    })
-  
-    test('should return venue data by ID that does exist', async function () {
-        const venue = await Promise.resolve(getAllVenues()) 
-      request(app)
-        .get(`/venues/${venue[0].id}`)
-        .accept('json')
-        .expect(200)
-    })
+  test('given venue that does not exist', function () {
+    const venueId: string = 'venue-123'
+    request(app).get(`/venues/${venueId}`).accept('json').expect(404)
   })
-  
+
+  test('should return venue data by ID that does exist', async function () {
+    const venue = await Promise.resolve(getAllVenues())
+    request(app).get(`/venues/${venue[0].id}`).accept('json').expect(200)
+  })
+})
