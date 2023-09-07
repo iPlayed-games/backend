@@ -7,6 +7,6 @@ export const getAllUsers = async (_req: Request, res: Response): Promise<void> =
 }
 
 export const getOneUserById = async (req: Request, res: Response): Promise<void> => {
-  // TODO: need implementation
-  res.send(req.params.id)
+  const userById = await UserService.getUserById(req.params.id)
+  res.send(userById)
 }
