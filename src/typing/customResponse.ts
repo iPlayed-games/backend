@@ -1,6 +1,6 @@
-export type CustomResponse = {
+export interface CustomResponse {
   code: number
   message: string
-  realErrorMessage: {}
-  responseObject: {}
+  realErrorMessage: unknown
+  data: {}
 }

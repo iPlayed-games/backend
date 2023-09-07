@@ -5,10 +5,10 @@ import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library'
 
 export async function getAllVenues(): Promise<CustomResponse> {
   const venues = await prisma.venue.findMany(AllIncludeActivity)
-  let resp: CustomResponse = { code: 200, message: '', realErrorMessage: {}, responseObject: [] }
+  let resp: CustomResponse = { code: 200, message: '', realErrorMessage: {}, data: {} }
   if (venues) {
     resp.message = 'Venues found!'
-    resp.responseObject = venues
+    resp.data = venues
   } else {
     resp.code = 404
     resp.message = 'Cannot find any venues in the system.'
@@ -17,7 +17,7 @@ export async function getAllVenues(): Promise<CustomResponse> {
 }
 
 export async function getVenueById(venueId: string): Promise<CustomResponse> {
-  let resp: CustomResponse = { code: 200, message: '', realErrorMessage: {}, responseObject: [] }
+  let resp: CustomResponse = { code: 200, message: '', realErrorMessage: {}, data: {} }
   try {
     const venue = await prisma.venue.findUniqueOrThrow({
       where: {
@@ -26,7 +26,7 @@ export async function getVenueById(venueId: string): Promise<CustomResponse> {
       ...AllIncludeActivity,
     })
     resp.message = 'Venue with Id ' + venueId + ' found.'
-    resp.responseObject = venue
+    resp.data = venue
   } catch (err) {
     if (err instanceof PrismaClientKnownRequestError) {
       resp.code = 404

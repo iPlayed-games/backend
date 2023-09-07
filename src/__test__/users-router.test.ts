@@ -14,9 +14,10 @@ describe('GET /users', () => {
       .accept('json')
       .expect(200)
       .then((response) => {
-        expect(response.body.responseObject.length).toBeGreaterThanOrEqual(3)
-        expect(Array.isArray(response.body.responseObject)).toBeTruthy()
-        expect(response.body.responseObject.length).not.toBe(0)
+        const { data } = response.body
+        expect(data).toBeGreaterThanOrEqual(3)
+        expect(Array.isArray(data)).toBeTruthy()
+        expect(data).not.toBe(0)
       })
   })
 
@@ -26,9 +27,10 @@ describe('GET /users', () => {
       .accept('json')
       .expect(200)
       .then((response) => {
-        expect(response.body.responseObject[0].email).toEqual('raphael1@gmail.com')
-        expect(response.body.responseObject[0].venue.name).toEqual('Play Center 1')
-        expect(response.body.responseObject[0].venue.activity?.length).toBeUndefined()
+        const { data } = response.body
+        expect(data[0].email).toEqual('raphael1@gmail.com')
+        expect(data[0].venue.name).toEqual('Play Center 1')
+        expect(data[0].venue.activity?.length).toBeUndefined()
       })
   })
 })

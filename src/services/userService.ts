@@ -5,10 +5,10 @@ import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library'
 
 export async function getAllUsers(): Promise<CustomResponse> {
   const users = await prisma.user.findMany(AllIncludeVenue)
-  let resp: CustomResponse = { code: 200, message: '', realErrorMessage: {}, responseObject: [] }
+  let resp: CustomResponse = { code: 200, message: '', realErrorMessage: {}, data: {} }
   if (users) {
     resp.message = 'Users found!'
-    resp.responseObject = users
+    resp.data = users
   } else {
     resp.code = 404
     resp.message = 'Cannot find any users in the system.'
@@ -17,7 +17,7 @@ export async function getAllUsers(): Promise<CustomResponse> {
 }
 
 export async function getUserById(userId: string): Promise<CustomResponse> {
-  let resp: CustomResponse = { code: 200, message: '', realErrorMessage: {}, responseObject: [] }
+  let resp: CustomResponse = { code: 200, message: '', realErrorMessage: {}, data: {} }
   try {
     const user = await prisma.user.findUniqueOrThrow({
       where: {
@@ -26,7 +26,7 @@ export async function getUserById(userId: string): Promise<CustomResponse> {
       ...AllIncludeVenue,
     })
     resp.message = 'User with Id ' + userId + ' found.'
-    resp.responseObject = user
+    resp.data = user
   } catch (err) {
     if (err instanceof PrismaClientKnownRequestError) {
       resp.code = 404
