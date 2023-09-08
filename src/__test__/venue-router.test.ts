@@ -1,12 +1,12 @@
 import request from 'supertest'
 import app from '../app'
 import { getAllVenues } from '../services/venueService'
+import mongoose from '../config/mongo/mongo'
 
-describe('GET /', () => {
-  test('should return 404', function (done) {
-    request(app).get('/').accept('json').expect(404).end(done)
+
+  afterAll(async () => {
+    await mongoose.connection.close()
   })
-})
 
 describe('GET /venues', () => {
   test('should return data from database', function () {
@@ -29,6 +29,18 @@ describe('GET /venues', () => {
       .then((response) => {
         expect(response.body[0].email).toEqual('playcenter1@gmail.com')
         expect(response.body[0].name).toEqual('Play Center 1')
+      })
+  })
+
+  test('should return venue and activity data from database', function () {
+    request(app)
+      .get('/venues')
+      .accept('json')
+      .expect(200)
+      .then((response) => {
+        expect(response.body[0].email).toEqual('playcenter1@gmail.com')
+        expect(response.body[0].name).toEqual('Play Center 1')
+        expect(response.body[0].activity?.length).toBeUndefined()
       })
   })
 })
