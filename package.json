@@ -4,7 +4,7 @@
   "description": "reservation system backend",
   "main": "server/index.ts",
   "scripts": {
-    "test": "jest --testTimeout=3000",
+    "test": "jest --detectOpenHandles --testTimeout=3000",
     "dev": "nodemon --exec node --experimental-specifier-resolution=node --loader ts-node/esm src/server.ts",
     "dev:seed": "ts-node --esm src/server.ts seed",
     "lint": "tsc && eslint --ext 'src/*.ts,*.json' --fix && prettier . --write",
